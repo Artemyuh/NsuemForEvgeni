@@ -13,16 +13,17 @@ df = pd.DataFrame(data)
 df.columns = df.iloc[0]
 df = df.iloc[1:]
 
+
 pi101_row = df[df['Группа']=='ПИ101']
 #студенты с уникальным номером из группы Пи101 
 unique_student_row = pi101_row['Личный номер студента'].unique()  
 unique_student_row_str = [str(number) for number in unique_student_row] 
 unique_student_row_str = ', '.join(unique_student_row_str)
-#годы контроля
+#годы контроля ПИ101
 year_control = pi101_row['Год'].unique()
 year_control_row_str = [str(number) for number in year_control]
 year_control_row_str = ', '.join(year_control_row_str)
-#тип контроля
+#тип контроля пи101
 type_control = pi101_row['Уровень контроля'].unique()
 type_control_str = [str(number) for number in type_control]
 type_control_str = ', '.join(type_control_str)
